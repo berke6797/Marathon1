@@ -72,12 +72,16 @@ public class DikdortgenAlanHesaplamaFormu {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Dikdortgen dikdortgen= new Dikdortgen();
+				
 				double a= Double.valueOf(txtKısakenar.getText());
 				double b= Double.valueOf(txtUzunKenar.getText());
-				lblSonuc.setText(dikdortgen.dikdortgenAlanHesapla(a, b));
-				
-			
-							}
+				if (a>0&&b>0) {
+					lblSonuc.setText(dikdortgen.dikdortgenAlanHesapla(a, b));
+				}
+				else {
+					lblSonuc.setText("Lütfen doğru değerler giriniz");
+					}		
+				}
 		});
 		btnNewButton.setBounds(155, 187, 89, 23);
 		frame.getContentPane().add(btnNewButton);

@@ -77,7 +77,12 @@ public class DikdortgenCevreHesaplamaFormu {
 				Dikdortgen dikdortgen= new Dikdortgen();
 				double a= Double.valueOf(txtKısaKenar.getText());
 				double b= Double.valueOf(txtUzunKenar.getText());
-				lblSonuc.setText(dikdortgen.dikdorgenCevreHesapla(a, b));
+				if (a>0 && b>0) {
+					lblSonuc.setText(dikdortgen.dikdorgenCevreHesapla(a, b));
+				}else {
+					lblSonuc.setText("Lütfen doğru değer giriniz");
+				}
+				
 	
 			}
 		});

@@ -64,17 +64,19 @@ public class DaireAlanHesaplamaFormu {
 		JButton btnNewButton = new JButton("Hesapla");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				Daire daire= new Daire();
-				if(Double.valueOf(txtYaricap.getText())>0) {
-				String alan= daire.daireninAlaniniHesapla(Double.valueOf(txtYaricap.getText()));
-				lblSonuc.setText(alan);
+				double r=Double.valueOf(txtYaricap.getText());
+				if (r>0) {
+					String alan= daire.daireninAlaniniHesapla(r);
+					lblSonuc.setText(alan);
 				}else {
-
 					lblSonuc.setText("Lütfen doğru değer giriniz ");
 				}
-				}
-			
+					
+				}	
 		});
+		
 		btnNewButton.setBounds(147, 193, 89, 23);
 		frame.getContentPane().add(btnNewButton);
 	}
